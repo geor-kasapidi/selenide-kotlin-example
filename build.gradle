@@ -84,7 +84,6 @@ tasks.withType(Test) {
 }
 
 test {
-    jvmArgs "-noverify"
     systemProperties["launch"] = "chrome.local"
     systemProperties["jenkins"] = "$jenkins"
 }
@@ -101,7 +100,7 @@ task testChrome(type: Test) {
 
 allure {
     version = allureVersion
-    aspectjweaver = true
+    aspectjweaver = false
     aspectjVersion = "1.9.20.1"
     configuration = "implementation"
 
